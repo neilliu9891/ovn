@@ -5643,7 +5643,7 @@ ovnacts_parse(struct lexer *lexer, const struct ovnact_parse_params *pp,
               struct ofpbuf *ovnacts, struct expr **prereqsp)
 {
     size_t ovnacts_start = ovnacts->size;
-
+   //aciton解析上下文ctx,一般遇到ctx都是汇总信息的，即信息太多需要汇总，传递，以方便后续使用
     struct action_context ctx = {
         .pp = pp,
         .lexer = lexer,

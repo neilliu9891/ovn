@@ -890,6 +890,7 @@ add_matches_to_flow_table(const struct sbrec_logical_flow *lflow,
         .ctrl_meter_id = ctrl_meter_id,
         .common_nat_ct_zone = get_common_nat_zone(ldp),
     };
+    //所有生成openflow信息的参数都汇总到ep中，ovnacts->data记录了之前解析的ovnact动作
     ovnacts_encode(ovnacts->data, ovnacts->size, &ep, &ofpacts);
 
     struct expr_match *m;
